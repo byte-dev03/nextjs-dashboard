@@ -1,5 +1,5 @@
 import postgres from 'postgres';
-import {
+import type {
   CustomerField,
   CustomersTableType,
   InvoiceForm,
@@ -9,6 +9,7 @@ import {
 } from './definitions';
 import { formatCurrency } from './utils';
 
+// biome-ignore lint/style/noNonNullAssertion: <explanation>
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 export async function fetchRevenue() {
